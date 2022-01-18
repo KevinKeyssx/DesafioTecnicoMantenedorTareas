@@ -18,6 +18,8 @@ public class Constants {
 
 	public static final String SEARCH_ALL = "/searchall";
 
+	public static final String SAVE = "/save";
+
 	public static final String INSERT = "/insert";
 
 	public static final String UPDATE = "/update";

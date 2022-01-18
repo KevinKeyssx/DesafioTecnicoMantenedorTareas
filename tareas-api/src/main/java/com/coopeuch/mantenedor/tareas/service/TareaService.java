@@ -49,6 +49,7 @@ public class TareaService implements ITarea {
         log.info("FINISHING - fillTarea");
 
         return new TareaEntity(
+            tareaDTO.getIdentificador(),
             tareaDTO.getDescripcion(),
             tareaDTO.getFechaCreacion(),
             tareaDTO.getVigente()

@@ -42,7 +42,7 @@ public class TareaController {
 		return new ResponseEntity<>(tareasDTO, new Util(true).typeStatus(tareasDTO));
 	}
 
-	@PostMapping(path =	 Constants.INSERT, consumes = "application/json", produces = "application/json")
+	@PostMapping(path =	 Constants.SAVE, consumes = "application/json", produces = "application/json")
 	public ResponseEntity<ResponseDTO> save(@Valid @RequestBody TareaDTO tareaDTO) {
 		log.info("*START - Controller save*");
 		iTarea.save(tareaDTO);
