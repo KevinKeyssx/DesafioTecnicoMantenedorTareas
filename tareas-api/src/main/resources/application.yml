@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: "Coopeuch Tareas"
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost/postgres
+    #Cambiar valores por la de su conexion local
+    username: postgres
+    password: 1234
+  jpa:
+    database: POSTGRESQL
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        generate_statistics: true
+        order_inserts: true
+        jdbc:
+          batch_size: 30
+          lob:
+            non_contextual_creation: true
+
+server:
+  port: 8030
+  tomcat:
+    mbeanregistry:
+      enabled: true
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: debug
+        type: trace
