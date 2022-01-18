@@ -39,6 +39,13 @@ public class TareaService implements ITarea {
         log.info("FINISHING - save");
     }
 
+    @Override
+    public void deleteById(TareaDTO tareaDTO) {
+        log.info("STARTING - deleteById");
+        iTarea.deleteById(tareaDTO.getIdentificador());
+        log.info("FINISHING - deleteById");
+    }
+
     private TareaEntity fillTarea(TareaDTO tareaDTO) {
         log.info("STARTING - fillTarea");
 

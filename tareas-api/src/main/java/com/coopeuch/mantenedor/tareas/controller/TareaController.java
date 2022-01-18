@@ -3,6 +3,7 @@ package com.coopeuch.mantenedor.tareas.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -42,11 +43,19 @@ public class TareaController {
 		return new ResponseEntity<>(tareasDTO, new Util(true).typeStatus(tareasDTO));
 	}
 
-	@PostMapping(path =	 Constants.SAVE, consumes = "application/json", produces = "application/json")
+	@PostMapping(path =	Constants.SAVE, consumes = "application/json", produces = "application/json")
 	public ResponseEntity<ResponseDTO> save(@Valid @RequestBody TareaDTO tareaDTO) {
 		log.info("*START - Controller save*");
 		iTarea.save(tareaDTO);
-		log.info("*START - Controller save*");
+		log.info("*FINISHED - Controller save*");
+		return new ResponseEntity<>(new ResponseDTO(Constants.SUCCESS_SAVE, new Date(), true), HttpStatus.CREATED);
+	}
+
+	@DeleteMapping(path = Constants.DELETE, consumes = "application/json", produces = "application/json")
+	public ResponseEntity<ResponseDTO> deleteById(@Valid @RequestBody TareaDTO tareaDTO) {
+		log.info("*START - Controller deleteById*");
+		iTarea.deleteById(tareaDTO);
+		log.info("*FINISHED - Controller deleteById*");
 		return new ResponseEntity<>(new ResponseDTO(Constants.SUCCESS_SAVE, new Date(), true), HttpStatus.CREATED);
 	}
 
