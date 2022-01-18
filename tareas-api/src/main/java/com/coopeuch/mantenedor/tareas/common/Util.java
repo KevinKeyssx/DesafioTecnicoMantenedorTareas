@@ -1,6 +1,3 @@
-/**
- * SmartNewGen exclusive class, all rights reserved
- */
 package com.coopeuch.mantenedor.tareas.common;
 
 import java.io.Serializable;
@@ -11,7 +8,7 @@ import org.springframework.http.HttpStatus;
 
 /**
  * @author Kevin Candia
- * 13-12-2020
+ * 17-01-2022
  */
 public class Util implements Serializable {
 

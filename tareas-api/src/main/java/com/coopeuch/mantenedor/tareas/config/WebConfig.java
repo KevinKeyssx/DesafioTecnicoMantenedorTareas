@@ -1,6 +1,3 @@
-/**
- * SmartNewGen exclusive class, all rights reserved
- */
 package com.coopeuch.mantenedor.tareas.config;
 
 import org.springframework.context.annotation.Configuration;
@@ -13,7 +10,7 @@ import io.swagger.v3.oas.annotations.info.License;
 
 /**
  * @author Kevin Candia
- * 30-10-2020
+ * 17-01-2022
  */
 @Configuration
 @OpenAPIDefinition(info = @Info(title = "Tareas", license = @License(name = "Copyright © 2022 Tareas"), description = "Mantenedor de tareas"))

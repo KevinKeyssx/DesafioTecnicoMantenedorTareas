@@ -12,4 +12,6 @@ public interface ITarea {
 
     public List<TareaDTO> findAll();
 
+    public void save(TareaDTO tareaDTO);
+
 }

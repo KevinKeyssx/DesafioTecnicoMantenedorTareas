@@ -14,14 +14,28 @@ import javax.persistence.TemporalType;
 
 import com.coopeuch.mantenedor.tareas.common.ConstantsDB;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+/**
+ * @author Kevin Candia
+ * 17-01-2022
+ */
 @Setter
 @Getter
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = ConstantsDB.TABLE_LABEL, schema = ConstantsDB.SCHEMA)
 public class TareaEntity implements Serializable {
+
+	public TareaEntity(String descripcion, Date fechaCreacion, Boolean vigente){
+		this.descripcion 	= descripcion;
+		this.fechaCreacion 	= fechaCreacion;
+		this.vigente 		= vigente;
+	}
 
     @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -29,11 +29,35 @@ public class TareaService implements ITarea {
         log.info("STARTING - findAllTarea");
         var tareaAll = iTarea.findAll();
         log.info("FINISHING - findAllTarea");;
-        return fillTarea(tareaAll);
+        return fillListTareas(tareaAll);
     }
 
-    private List<TareaDTO> fillTarea(List<TareaEntity> listTarea) {
+    @Override
+    public void save(TareaDTO tareaDTO) {
+        log.info("STARTING - save");
+        iTarea.save(fillTarea(tareaDTO));
+        log.info("FINISHING - save");
+    }
+
+    private TareaEntity fillTarea(TareaDTO tareaDTO) {
         log.info("STARTING - fillTarea");
+
+        if (tareaDTO == null) {
+            return null;
+        }
+
+        log.info("FINISHING - fillTarea");
+
+        return new TareaEntity(
+            tareaDTO.getDescripcion(),
+            tareaDTO.getFechaCreacion(),
+            tareaDTO.getVigente()
+        );
+    }
+
+    private List<TareaDTO> fillListTareas(List<TareaEntity> listTarea) {
+        log.info("STARTING - fillListTareas");
+
         if (listTarea == null || listTarea.size() == 0) {
             return null;
         }
@@ -48,7 +72,9 @@ public class TareaService implements ITarea {
                 tareaEntity.getVigente()
             ));
         }
-        log.info("FINISHING - fillTarea");
+
+        log.info("FINISHING - fillListTareas");
         return listTareaDTO;
     }
+
 }

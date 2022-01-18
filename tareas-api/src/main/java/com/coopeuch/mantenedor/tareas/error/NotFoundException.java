@@ -2,7 +2,7 @@ package com.coopeuch.mantenedor.tareas.error;
 
 /**
  * @author Kevin Candia
- * 23-09-2020
+ * 17-01-2022
  */
 public class NotFoundException extends RuntimeException{
 

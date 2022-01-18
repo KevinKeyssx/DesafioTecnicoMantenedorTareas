@@ -14,7 +14,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 
 /**
  * @author Kevin Candia
- * 23-09-2020
+ * 17-01-2022
  */
 @ControllerAdvice
 @RestController

@@ -24,6 +24,10 @@ public class Constants {
 
 	public static final String DELETE = "/delete";
 
+	public static final String SUCCESS_SAVE = "Tarea guardada correctamente.";
+
+	public static final String SUCCESS_DELETE = "Tarea eliminada correctamente.";
+
 	private Constants() {
 		throw new IllegalAccessError();
 	}
