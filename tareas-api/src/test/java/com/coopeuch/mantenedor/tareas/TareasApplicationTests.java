@@ -1,5 +1,7 @@
 package com.coopeuch.mantenedor.tareas;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -7,7 +9,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 class TareasApplicationTests {
 
 	@Test
-	void contextLoads() {
+	public void main() {
+		TareasApplication.main(new String[] {});
+		assertTrue(Boolean.TRUE);
 	}
-
 }

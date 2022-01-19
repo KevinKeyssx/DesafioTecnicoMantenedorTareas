@@ -20,8 +20,8 @@ import javax.validation.Valid;
 
 import com.coopeuch.mantenedor.tareas.common.Constants;
 import com.coopeuch.mantenedor.tareas.common.Util;
-import com.coopeuch.mantenedor.tareas.dto.ResponseDTO;
-import com.coopeuch.mantenedor.tareas.dto.TareaDTO;
+import com.coopeuch.mantenedor.tareas.data.ResponseDTO;
+import com.coopeuch.mantenedor.tareas.data.TareaDTO;
 import com.coopeuch.mantenedor.tareas.interfaces.ITarea;
 
 /**

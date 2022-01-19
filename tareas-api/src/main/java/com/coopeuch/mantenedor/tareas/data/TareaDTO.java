@@ -1,4 +1,4 @@
-package com.coopeuch.mantenedor.tareas.dto;
+package com.coopeuch.mantenedor.tareas.data;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -13,6 +13,7 @@ import org.hibernate.annotations.CreationTimestamp;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
@@ -22,6 +23,7 @@ import lombok.Setter;
 @Setter
 @Getter
 @AllArgsConstructor
+@NoArgsConstructor
 public class TareaDTO implements Serializable {
 
 	@JsonProperty("identificador")

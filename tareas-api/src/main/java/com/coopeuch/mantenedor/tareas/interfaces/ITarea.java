@@ -2,7 +2,7 @@ package com.coopeuch.mantenedor.tareas.interfaces;
 
 import java.util.List;
 
-import com.coopeuch.mantenedor.tareas.dto.TareaDTO;
+import com.coopeuch.mantenedor.tareas.data.TareaDTO;
 
 /**
  * @author Kevin Candia

@@ -1,4 +1,4 @@
-package com.coopeuch.mantenedor.tareas.dto;
+package com.coopeuch.mantenedor.tareas.data;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
@@ -17,6 +18,7 @@ import lombok.Setter;
 @Setter
 @Getter
 @AllArgsConstructor
+@NoArgsConstructor
 public class ResponseDTO implements Serializable {
 
     @JsonProperty("response")
