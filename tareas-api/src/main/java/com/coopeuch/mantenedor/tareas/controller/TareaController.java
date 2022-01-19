@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -51,10 +52,10 @@ public class TareaController {
 		return new ResponseEntity<>(new ResponseDTO(Constants.SUCCESS_SAVE, new Date(), true), HttpStatus.CREATED);
 	}
 
-	@DeleteMapping(path = Constants.DELETE, consumes = "application/json", produces = "application/json")
-	public ResponseEntity<ResponseDTO> deleteById(@Valid @RequestBody TareaDTO tareaDTO) {
+	@DeleteMapping(path = Constants.DELETE, produces = "application/json")
+	public ResponseEntity<ResponseDTO> deleteById(@RequestParam(value = "identificador", required = true) Long identificador) {
 		log.info("*START - Controller deleteById*");
-		iTarea.deleteById(tareaDTO);
+		iTarea.deleteById(identificador);
 		log.info("*FINISHED - Controller deleteById*");
 		return new ResponseEntity<>(new ResponseDTO(Constants.SUCCESS_DELETE, new Date(), true), HttpStatus.ACCEPTED);
 	}

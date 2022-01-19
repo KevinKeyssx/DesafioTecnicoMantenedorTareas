@@ -40,10 +40,15 @@ public class TareaService implements ITarea {
     }
 
     @Override
-    public void deleteById(TareaDTO tareaDTO) {
+    public void deleteById(Long identificador) {
         log.info("STARTING - deleteById");
-        iTarea.deleteById(tareaDTO.getIdentificador());
-        log.info("FINISHING - deleteById");
+        try {
+            
+            iTarea.deleteById(identificador);
+            log.info("FINISHING - deleteById");
+        } catch (Exception e) {
+            log.info("ERROR - deleteById" + e.getMessage());
+        }
     }
 
     private TareaEntity fillTarea(TareaDTO tareaDTO) {

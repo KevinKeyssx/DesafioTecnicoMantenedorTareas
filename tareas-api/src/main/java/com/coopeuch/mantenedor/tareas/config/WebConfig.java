@@ -18,7 +18,7 @@ public class WebConfig implements WebMvcConfigurer {
 
 	@Override
 	public void addCorsMappings(CorsRegistry registry) {
-		registry.addMapping("/**").allowedMethods("PUT", "POST", "GET", "OPTION", "HEAD").maxAge(3600);
+		registry.addMapping("/**").allowedMethods("PUT", "POST", "GET", "DELETE", "OPTION", "HEAD").maxAge(3600);
 	}
 
 }

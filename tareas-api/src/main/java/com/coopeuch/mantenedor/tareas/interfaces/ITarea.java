@@ -14,6 +14,6 @@ public interface ITarea {
 
     public void save(TareaDTO tareaDTO);
 
-    public void deleteById(TareaDTO tareaDTO);
+    public void deleteById(Long identificador);
 
 }
