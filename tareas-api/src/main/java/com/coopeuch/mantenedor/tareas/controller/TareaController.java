@@ -56,7 +56,7 @@ public class TareaController {
 		log.info("*START - Controller deleteById*");
 		iTarea.deleteById(tareaDTO);
 		log.info("*FINISHED - Controller deleteById*");
-		return new ResponseEntity<>(new ResponseDTO(Constants.SUCCESS_SAVE, new Date(), true), HttpStatus.CREATED);
+		return new ResponseEntity<>(new ResponseDTO(Constants.SUCCESS_DELETE, new Date(), true), HttpStatus.ACCEPTED);
 	}
 
 }
