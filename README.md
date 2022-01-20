@@ -2,6 +2,14 @@
 Crear una aplicación web fron-back para coopeuch
 
 #Para poder utilizar la aplicación debemos primero compilar tareas-api
+#Paso 0
+#Se debe instarlar posgreSQL con la siguiente conexion:
+#HOST:localhost
+#PORT:5432
+#USER:postgres
+#PASS:1234 puede ser cambiada luego en el archivo application.yml
+#DATABASE: postgres
+
 #Paso 1
 #Agregar a las variables de entorno OpenJDK17
 https://jdk.java.net/17/
