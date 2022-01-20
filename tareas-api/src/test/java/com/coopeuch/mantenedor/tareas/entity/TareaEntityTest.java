@@ -1,5 +1,6 @@
 package com.coopeuch.mantenedor.tareas.entity;
 
+import java.util.Calendar;
 import java.util.Date;
 
 import org.junit.jupiter.api.Test;
@@ -7,12 +8,15 @@ import org.junit.Assert;
 
 public class TareaEntityTest {
 
+	Calendar date = Calendar.getInstance();
+
+
     @Test
 	void testConstructor() {
 		var tareaDTO = new TareaEntity(
 			1L,
 			"Tarea 1",
-			new Date(),
+			date,
 			true
 		);
 		assertEquals(tareaDTO);
@@ -23,7 +27,7 @@ public class TareaEntityTest {
 		var tareaDTO = new TareaEntity();
 		tareaDTO.setIdentificador(1L);
 		tareaDTO.setDescripcion("Tarea 1");
-		tareaDTO.setFechaCreacion(new Date());
+		tareaDTO.setFechaCreacion(date);
 		tareaDTO.setVigente(true);;
 		assertEquals(tareaDTO);
 	}

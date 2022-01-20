@@ -28,6 +28,8 @@ export class AppService {
       if (response) {
         console.log('***RESPONSE TAREAS:', response);
         this.tareas = response;
+        this.tareas[0].fechaCreacion.format('dd-mm-yyyy');
+
         this.isLoadingTareasData.next(true);
       }
     });

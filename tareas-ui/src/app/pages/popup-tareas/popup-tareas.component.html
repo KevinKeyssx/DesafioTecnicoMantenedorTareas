@@ -1,32 +1,36 @@
-<p>{{title}}</p>
+<div class="header">
 
-<form id="formSection" [formGroup]="formSection">
-    <mat-form-field id="id" class="example-full-width" appearance="fill">
-        <mat-label>Identificador</mat-label>
-        <input matInput placeholder="Ej. 1" formControlName="identificador">
-    </mat-form-field>
-    
-    <mat-form-field id="desc" class="example-full-width" appearance="fill">
-        <mat-label>Descripción</mat-label>
-        <input matInput placeholder="Ej. tarea numero 1" formControlName="descripcion">
-    </mat-form-field>
-    
-    <!-- <mat-form-field id="fecha" appearance="fill">
-        <mat-label>Fecha creación</mat-label>
-        <input matInput [matDatepicker]="picker" formControlName="fechaCreacion">
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-    </mat-form-field> -->
+    <p class="text-header">{{title}}</p>
+</div>
 
-    <input type="date" id="fecha" formControlName="fechaCreacion">
+<div class="container row mt-5 body" >
 
-    <section id="vigent" class="example-section">
-        <mat-checkbox class="example-margin" [checked]="tareaData.vigente" formControlName="vigente">Vigente</mat-checkbox>
-    </section>
-</form>
-
-<!-- Botonera -->
-<div id="btn-group" mat-dialog-actions class="buttons">
-    <button id="btn-close" mat-button mat-dialog-close>Cancelar</button>
-    <button id="btn-ok" mat-raised-button color="primary" (click)="validateForm()" [disabled]="formSection.invalid">Aceptar</button>
+    <form id="formSection" [formGroup]="formSection" class="col-md-4">
+        <mat-form-field id="id" class="example-full-width" appearance="fill">
+            <mat-label>Identificador</mat-label>
+            <input matInput placeholder="Ej. 1" formControlName="identificador">
+        </mat-form-field>
+        
+        <mat-form-field id="desc" class="example-full-width" appearance="fill">
+            <mat-label>Descripción</mat-label>
+            <input matInput placeholder="Ej. tarea numero 1" formControlName="descripcion">
+        </mat-form-field>
+        
+        <mat-form-field id="fecha" appearance="fill">
+            <mat-label>Fecha creación</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="fechaCreacion">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        
+        <section id="vigent" class="example-section">
+            <mat-checkbox class="example-margin" [checked]="tareaData.vigente" formControlName="vigente">Vigente</mat-checkbox>
+        </section>
+    </form>
+    <!-- Botonera -->
+    <div id="btn-group" mat-dialog-actions class="buttons">
+        <hr>
+        <button id="btn-close" mat-button mat-dialog-close>Cancelar</button>
+        <button id="btn-ok" mat-raised-button color="primary" (click)="validateForm()" [disabled]="formSection.invalid">Aceptar</button>
+    </div>
 </div>

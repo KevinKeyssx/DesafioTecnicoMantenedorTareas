@@ -1,7 +1,9 @@
+import { Moment } from "moment";
+
 export interface ITarea {
     identificador   : number;
     descripcion     : string;
-    fechaCreacion   : Date;
+    fechaCreacion   : Moment;
     vigente         : boolean;
     type?           : string;
 }

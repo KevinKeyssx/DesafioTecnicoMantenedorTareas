@@ -1,5 +1,6 @@
 package com.coopeuch.mantenedor.tareas.controller;
 
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -33,6 +34,8 @@ public class TareaController {
     @MockBean
 	private TareaService service;
 
+	private Calendar date = Calendar.getInstance();
+
     @Test
 	@DisplayName("Get /search")
 	void testGetData() throws Exception {
@@ -52,7 +55,7 @@ public class TareaController {
 		var tareaDTO = new TareaDTO(
             null, 
             "insert test",
-            new Date(),
+            date,
             true
         );
 
@@ -68,7 +71,7 @@ public class TareaController {
 		var tareaDTO = new TareaDTO(
             100L, 
             "update test",
-            new Date(),
+            date,
             true
         );
 

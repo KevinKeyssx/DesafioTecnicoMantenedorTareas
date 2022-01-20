@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import lombok.extern.log4j.Log4j2;
 
+import java.text.ParseException;
 import java.util.Date;
 import java.util.List;
 
@@ -37,7 +38,7 @@ public class TareaController {
 	private ITarea iTarea;
 
     @GetMapping(path = Constants.SEARCH_ALL, produces = "application/json")
-	public ResponseEntity<List<TareaDTO>> findAll() {
+	public ResponseEntity<List<TareaDTO>> findAll() throws ParseException {
 		log.info("*START - Controller findAll*");
 		var tareasDTO = iTarea.findAll();
 		log.info("*FINISHED - Controller findAll*");

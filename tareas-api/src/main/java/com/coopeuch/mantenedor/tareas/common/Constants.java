@@ -30,6 +30,12 @@ public class Constants {
 
 	public static final String SUCCESS_DELETE = "Tarea eliminada correctamente.";
 
+	/**
+     * Default DATE TIME FORMAT
+     * 
+     */
+    public static final String DATE_TIME_FORMAT = "dd-MM-yyyy";
+
 	private Constants() {
 		throw new IllegalAccessError();
 	}

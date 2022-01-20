@@ -2,17 +2,20 @@ package com.coopeuch.mantenedor.tareas.data;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.Calendar;
 import java.util.Date;
 import org.junit.Assert;
 
 public class TareaDTOTest {
-
+	
+	private Calendar date = Calendar.getInstance();
+	
     @Test
 	void testConstructor() {
 		var tareaDTO = new TareaDTO(
 			1L,
 			"Tarea 1",
-			new Date(),
+			date,
 			true
 		);
 		assertEquals(tareaDTO);
@@ -23,8 +26,8 @@ public class TareaDTOTest {
 		var tareaDTO = new TareaDTO();
 		tareaDTO.setIdentificador(1L);
 		tareaDTO.setDescripcion("Tarea 1");
-		tareaDTO.setFechaCreacion(new Date());
-		tareaDTO.setVigente(true);;
+		tareaDTO.setFechaCreacion(date);
+		tareaDTO.setVigente(true);
 		assertEquals(tareaDTO);
 	}
 
@@ -32,7 +35,7 @@ public class TareaDTOTest {
 		Assert.assertNotNull(tareaDTO);
 		Assert.assertNotEquals(true, tareaDTO.getIdentificador());
 		Assert.assertEquals("Tarea 1", tareaDTO.getDescripcion());
-		Assert.assertEquals(new Date(), tareaDTO.getFechaCreacion());
+		Assert.assertEquals(date, tareaDTO.getFechaCreacion());
 		Assert.assertEquals(true, tareaDTO.getVigente());
 	}
 

@@ -1,12 +1,16 @@
 package com.coopeuch.mantenedor.tareas.data;
 
 import java.io.Serializable;
+import java.time.LocalDate;
+import java.util.Calendar;
 import java.util.Date;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import com.coopeuch.mantenedor.tareas.common.Constants;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import org.hibernate.annotations.CreationTimestamp;
@@ -38,7 +42,7 @@ public class TareaDTO implements Serializable {
 	@CreationTimestamp
 	@NotNull(message = "Fecha de creación no puede ser nula")
 	@JsonProperty("fechaCreacion")
-	private Date fechaCreacion;
+	private LocalDate fechaCreacion;
 
 	@NotNull(message = "Vigente no puede ser nulo")
 	@JsonProperty("vigente")

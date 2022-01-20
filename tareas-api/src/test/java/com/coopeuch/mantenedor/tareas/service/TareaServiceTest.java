@@ -3,6 +3,7 @@ package com.coopeuch.mantenedor.tareas.service;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -30,6 +31,8 @@ public class TareaServiceTest {
     @Mock
 	private ITareaRepository repository;
 
+	Calendar date = Calendar.getInstance();
+
     @Test
     @DisplayName("Find All")
 	void testFindAll() throws Exception {
@@ -39,7 +42,7 @@ public class TareaServiceTest {
 		listTareaEntity.add(new TareaEntity(
             1L,
             "Tarea 1",
-            new Date(),
+            date,
             true
         ));
 		// When
@@ -59,7 +62,7 @@ public class TareaServiceTest {
 		// Given
 		var tareaEntity = new TareaEntity(
             "Tarea 1",
-            new Date(),
+            date,
             true
         );
 
@@ -76,7 +79,7 @@ public class TareaServiceTest {
 		var tareaEntity = new TareaEntity(
             1L,
             "Tarea 1",
-            new Date(),
+            date,
             true
         );
 		// When

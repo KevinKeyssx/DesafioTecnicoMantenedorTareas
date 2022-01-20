@@ -15,12 +15,27 @@ export class TareasComponent {
 
   @ViewChild(MatSort, { static: false }) set content(sort: MatSort) {
     this.dataSource.sort = sort;
+    console.log('DATA:', sort)
+    this.dataSource.sortingDataAccessor = (data, sortHeaderId) => {
+      // if (!data[sortHeaderId]) {
+      //   return this.content.direction === "asc" ? "3" : "1";
+      // }
+      // return "2" + data[sortHeaderId].toLocaleLowerCase();
+
+
+      console.log('DATA:', data);
+      console.log('sortHeaderId:', sortHeaderId);
+      
+      return sortHeaderId;
+    };
   }
+
+  public tareaBuilder = {} as ITarea;
 
   public dataSource: MatTableDataSource<ITarea> = new MatTableDataSource();
   public displayedColumns   = ['Identificador', 'Descripción', 'Fecha creación', 'Vigente'];
   public displayedData      = ['identificador', 'descripcion', 'fechaCreacion', 'vigente'];
-  private displayedButtons  = ['Agregar', 'Editar', 'Eliminar'];
+  private displayedButtons  = ['Editar', 'Eliminar'];
 
   constructor(
       private appService: AppService,
@@ -51,7 +66,6 @@ export class TareasComponent {
 
   public getIcon(type: string): string {
     return {
-      'Agregar'     : "https://img.icons8.com/color/48/000000/plus--v3.png", 
       'Editar'      : "https://img.icons8.com/color/48/000000/edit--v2.png", 
       'Eliminar'    : "https://img.icons8.com/color/48/000000/delete-forever.png"
     }[type] || '';

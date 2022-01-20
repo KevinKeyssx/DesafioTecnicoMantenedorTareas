@@ -21,7 +21,7 @@ export class PopupTareasComponent {
     public dialogRef: MatDialogRef<PopupTareasComponent>,
     @Inject(MAT_DIALOG_DATA) public tarea: ITarea,
     private formBuilder: FormBuilder,
-    private appService: AppService
+    private appService: AppService,
   ) { 
     this.tareaData  = tarea.type === 'Agregar' ? {} as ITarea : tarea;
     this.title      = tarea.type + this.title;
@@ -50,7 +50,7 @@ export class PopupTareasComponent {
           this.appService.toastr.success('Tarea guardada correctamente.');
           this.dialogRef.close();
         },error: () => {
-          this.appService.toastr.success('Ocurrio un error al intentar guardar.');
+          this.appService.toastr.error('Ocurrio un error al intentar guardar.');
         }
       });
     }
