@@ -1,0 +1,26 @@
+<table id="tablaTareas" mat-table matSort [dataSource]="dataSource" class="mat-elevation-z8">
+    <caption></caption>
+    <ng-container *ngFor="let column of displayedColumns; index as index" [matColumnDef]="column">
+        <th mat-header-cell *matHeaderCellDef> {{column}} </th>
+
+        <ng-container *ngIf="!isButton(displayedData[index]); then button else data"></ng-container>
+        <ng-template #data>
+            <td td mat-cell *matCellDef="let element"> 
+                <img id="icon" class="icon" width="30" alt="icon" [src]="getIcon(displayedData[index])" (click)="openPopUp(element, displayedData[index])">
+            </td>
+        </ng-template>
+        <ng-template #button>
+            <td mat-cell *matCellDef="let element"> {{element[displayedData[index]]}} </td>
+        </ng-template>
+
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+        (dblclick)="openPopUp(row, 'Editar')">
+    </tr>
+</table>
+<div class="button">
+
+    <button id="btn-ok" mat-raised-button color="primary" (click)="openPopUp(tareaBuilder, 'Agregar')">Agregar</button>
+</div>
