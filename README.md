@@ -24,7 +24,7 @@ mvn clean package
 
 #Paso 5 opcional
 #Si se quiere probar el api desde un cliente REST, existe un archivo json llamado thunder-collection_CoopeuchTareas.json
-#Esta echo desde la extension de VSCODE llamada Thunder Client, simpletemente se busca Thunder Client e instalar
+#Esta echo desde la extension de VSCODE llamada Thunder Client, simpletemente se busca Thunder Client e instalar e importar el archivo
 
 #Paso 6 opcional
 #Existe un script llamado tarea_coopeuch.sql, en cual se puede crear la tabla con el script que existe ahí
