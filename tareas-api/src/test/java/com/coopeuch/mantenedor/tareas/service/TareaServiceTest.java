@@ -2,9 +2,8 @@ package com.coopeuch.mantenedor.tareas.service;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
 import com.coopeuch.mantenedor.tareas.data.TareaDTO;
@@ -31,7 +30,7 @@ public class TareaServiceTest {
     @Mock
 	private ITareaRepository repository;
 
-	Calendar date = Calendar.getInstance();
+	private LocalDate date = LocalDate.now();
 
     @Test
     @DisplayName("Find All")

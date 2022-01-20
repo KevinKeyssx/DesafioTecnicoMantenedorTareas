@@ -2,14 +2,13 @@ package com.coopeuch.mantenedor.tareas.data;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.Calendar;
-import java.util.Date;
+import java.time.LocalDate;
 import org.junit.Assert;
 
 public class TareaDTOTest {
-	
-	private Calendar date = Calendar.getInstance();
-	
+
+	private LocalDate date = LocalDate.now();
+
     @Test
 	void testConstructor() {
 		var tareaDTO = new TareaDTO(

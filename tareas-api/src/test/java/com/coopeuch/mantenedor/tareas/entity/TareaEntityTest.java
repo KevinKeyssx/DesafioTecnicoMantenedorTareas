@@ -1,6 +1,6 @@
 package com.coopeuch.mantenedor.tareas.entity;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import java.util.Date;
 
 import org.junit.jupiter.api.Test;
@@ -8,8 +8,7 @@ import org.junit.Assert;
 
 public class TareaEntityTest {
 
-	Calendar date = Calendar.getInstance();
-
+	private LocalDate date = LocalDate.now();
 
     @Test
 	void testConstructor() {

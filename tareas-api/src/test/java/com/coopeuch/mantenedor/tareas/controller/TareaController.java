@@ -1,7 +1,6 @@
 package com.coopeuch.mantenedor.tareas.controller;
 
-import java.util.Calendar;
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -34,7 +33,7 @@ public class TareaController {
     @MockBean
 	private TareaService service;
 
-	private Calendar date = Calendar.getInstance();
+	private LocalDate date = LocalDate.now();
 
     @Test
 	@DisplayName("Get /search")
