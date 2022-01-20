@@ -22,6 +22,15 @@ mvn spring-boot:run
 #Se pueden correr las pruebas unitarias
 mvn clean package
 
+#Paso 5 opcional
+#Si se quiere probar el api desde un cliente REST, existe un archivo json llamado thunder-collection_CoopeuchTareas.json
+#Esta echo desde la extension de VSCODE llamada Thunder Client, simpletemente se busca Thunder Client e instalar
+
+#Paso 6 opcional
+#Existe un script llamado tarea_coopeuch.sql, en cual se puede crear la tabla con el script que existe ahí
+#Además de proporcionar datos de pruebas
+#NOTA : no es realmente necesario ya que al ejecutar la aplicación se crea la tabla automaticamente, pero si se puede insetar lo datos
+
 #Compilar aplicación UI
 #Paso 1
 #Abrir la aplicación luego ejecutar el comando:

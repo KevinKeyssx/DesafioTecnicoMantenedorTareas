@@ -1,7 +1,7 @@
 <table id="tablaTareas" mat-table matSort [dataSource]="dataSource" class="mat-elevation-z8">
     <caption></caption>
     <ng-container *ngFor="let column of displayedColumns; index as index" [matColumnDef]="column">
-        <th mat-header-cell *matHeaderCellDef > {{column}} </th>
+        <th mat-header-cell *matHeaderCellDef> {{column}} </th>
 
         <ng-container *ngIf="!isButton(displayedData[index]); then button else data"></ng-container>
         <ng-template #data>
