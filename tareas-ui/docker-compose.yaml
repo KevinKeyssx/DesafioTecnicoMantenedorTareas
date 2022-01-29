@@ -1,0 +1,10 @@
+version: "3.7"
+
+services:
+  tareas:
+    build: .
+    container_name: tareas-server
+    ports:
+    - 1700:1700
+    volumes:
+    - .:/usr/share/nginx/html
